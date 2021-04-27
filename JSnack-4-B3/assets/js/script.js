@@ -4,17 +4,16 @@ il codice giocatore deve essere formato da 3 lettere maiuscole casuali e 3 cifre
 la media punti fatti per partita deve essere compresa tra 0 e 50
 la percentuale di successo per da 3 punti deve essere compresa tra 0 e 100 */
 $(document).ready(function(){
+  var numberTeam = parseInt(prompt('quanti giocatori vuoi vedere'));
   var arrTeam = [];
   var strPlayer = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   
-
-  var namePlayer = (generatorRandomStr(strPlayer,3) + generatorRandomNumber(100,999));
-  var pointPlayer = generatorRandomNumber(0,50);
-  var pointThreePlayer = generatorRandomNumber(0,100);
-  
   console.log(namePlayer);
 
-  while(arrTeam.length < 5){
+  while(arrTeam.length < numberTeam){
+    var namePlayer = (generatorRandomStr(strPlayer,3) + generatorRandomNumber(100,999));
+    var pointPlayer = generatorRandomNumber(0,50);
+    var pointThreePlayer = generatorRandomNumber(0,100);
     playerTeam(arrTeam,namePlayer,pointPlayer,pointThreePlayer);
   }
   console.log(arrTeam)

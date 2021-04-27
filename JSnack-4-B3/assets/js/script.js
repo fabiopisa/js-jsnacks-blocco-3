@@ -6,14 +6,18 @@ la percentuale di successo per da 3 punti deve essere compresa tra 0 e 100 */
 $(document).ready(function(){
   var arrTeam = [];
   var strPlayer = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  var content ="";
+  
 
   var namePlayer = (generatorRandomStr(strPlayer,3) + generatorRandomNumber(100,999));
   var pointPlayer = generatorRandomNumber(0,50);
   var pointThreePlayer = generatorRandomNumber(0,100);
   
-  /* console.log(generatorRandomStr(strPlayer,3) + generatorRandomNumber(100,999)); */
   console.log(namePlayer);
+
+  while(arrTeam.length < 5){
+    playerTeam(arrTeam,namePlayer,pointPlayer,pointThreePlayer);
+  }
+  console.log(arrTeam)
 
   //funzioni
   function playerTeam (target,player,averagePointsPlayer,averageOfThreePointsPlayer){
@@ -29,11 +33,10 @@ $(document).ready(function(){
   }
   
   function generatorRandomStr (str,numberText){
+    var content ="";
     for ( var i = 0; i < numberText; i++ ){
       content += str.charAt(Math.floor(Math.random() * str.length));
     }
-    
     return content 
-    
   }
 });

@@ -8,11 +8,11 @@ $(document).ready(function(){
   var strPlayer = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var content ="";
 
-  var namePlayer = ("HYT" + generatorRandomNumber(100,999));
+  var namePlayer = (generatorRandomStr(strPlayer,3) + generatorRandomNumber(100,999));
   var pointPlayer = generatorRandomNumber(0,50);
   var pointThreePlayer = generatorRandomNumber(0,100);
   
-  console.log(generatorRandomStr(strPlayer,3));
+  console.log(generatorRandomStr(strPlayer,3) + generatorRandomNumber(100,999));
   
 
   //funzioni
@@ -29,8 +29,12 @@ $(document).ready(function(){
   }
   
   function generatorRandomStr (str,numberText){
-    for ( var i = 0; i = numberText; i++ ) {
-      return content += str.charAt(Math.floor(Math.random() * str.length));
+    for ( var i = 0; i < numberText; i++ ){
+      content += str.charAt(Math.floor(Math.random() * str.length));
+      console.log('ciao');
     }
+    
+    return content 
+    
   }
 });

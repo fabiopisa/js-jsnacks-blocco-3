@@ -12,8 +12,8 @@ $(document).ready(function(){
   var pointPlayer = generatorRandomNumber(0,50);
   var pointThreePlayer = generatorRandomNumber(0,100);
   
-  console.log(generatorRandomStr(strPlayer,3) + generatorRandomNumber(100,999));
-  
+  /* console.log(generatorRandomStr(strPlayer,3) + generatorRandomNumber(100,999)); */
+  console.log(namePlayer);
 
   //funzioni
   function playerTeam (target,player,averagePointsPlayer,averageOfThreePointsPlayer){
@@ -31,7 +31,6 @@ $(document).ready(function(){
   function generatorRandomStr (str,numberText){
     for ( var i = 0; i < numberText; i++ ){
       content += str.charAt(Math.floor(Math.random() * str.length));
-      console.log('ciao');
     }
     
     return content 
